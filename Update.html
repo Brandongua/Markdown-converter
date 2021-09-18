@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./imgs/fav.png">
+    <title>Update Log</title>
+    <script src="./js/DOMElements.js"></script>
+    <style>
+        :root{
+            --changed-color: #8da000;
+        }
+        html{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1,
+        h2{
+            text-align: center;
+        }
+        .version-num{
+            font-size:2em;
+            border-bottom:1px dashed black;
+        }
+        .version-container{
+            font-size:1.5em;
+        }
+        .added{
+            text-decoration:underline;
+            color:#2e882b;
+        }
+        .removed{
+            text-decoration: underline;
+            color:red;
+        }
+        .fixed{
+            text-decoration: underline red;
+            color: #2e882b;
+        }
+        .changed{
+            text-decoration: underline;
+            color:var(--changed-color);
+        }
+        .quality-of-life{
+            color:limegreen;
+            text-decoration: underline dotted var(--changed-color);
+        }
+        #toc a:visited{
+            color:blue;
+        }
+        #toc a:hover{
+            color:green;
+        }
+        #toc ul li{
+            list-style-type: upper-alpha;
+        }
+        #toc ul ul li{
+            list-style-type:upper-roman;
+        }
+        #toc ul ul ul li{
+            list-style-type:lower-alpha;
+        }
+        #home-link{
+            color:blue;
+        }
+        #home-link:visited{
+            color:blue;
+        }
+    </style>
+</head>
+<body style='background-color:#eeeeee'>
+    <div id="toc" style="position: fixed;overflow-y:auto;border:2px solid black;display: inline-block;height:99vh;padding:0;margin:0;padding-right:10px;top:1px;left:1px;background-color:linen;">
+    <h3><u>Versions</u></h3>
+    <ul>
+        <li><a href="#1.0.0">1.0.0</a></li>
+        <ul>
+            <li><a href="#1.1.0">1.1.0</a></li>
+            <ul>
+                <li><a href="#1.1.1">1.1.1</a></li>
+                <li><a href="#1.1.2">1.1.2</a></li>
+                <li><a href="#1.1.3">1.1.3</a></li>
+            </ul>
+            <li><a href="#1.2.0">1.2.0</a></li>
+            <li><a href="#1.3.0">1.3.0</a></li>
+            <ul>
+                <li><a href="#1.3.1">1.3.1</a></li>
+            </ul>
+            <li><a href="#1.4.0">1.4.0</a></li>
+            <ul>
+                <li><a href="#1.4.1">1.4.1</a></li>
+                <li><a href="#1.4.2">1.4.2</a></li>
+                <li><a href="#1.4.3">1.4.3</a></li>
+                <li><a href="#1.4.3">1.4.3</a></li>
+                <li><a href="#1.4.4">1.4.4</a></li>
+                <li><a href="#1.4.5">1.4.5</a></li>
+                <li><a href="#1.4.6">1.4.6</a></li>
+            </ul>
+            <li><a href="#1.5">1.5</a></li>
+            <li><a href="#1.6">1.6</a></li>
+            <ul>
+                <li><a href="#1.6.1">1.6.1</a></li>
+                <li><a href="#1.6.2">1.6.2</a></li>
+            </ul>
+            <li><a href="#1.7.0">1.7.0</a></li>
+            <li><a href="#1.8.0">1.8.0</a></li>
+	    <li>
+	        <a href="#1.8.1">1.8.1</a>
+		<a href="#1.8.2">1.8.2</a>
+	    </li>
+        </ul>
+    </ul>
+    </div>
+    <div id="main">
+    <h1 style="font-size:3.8em;"><a href="./index.html" id="home-link">Home</a></h1>
+    <h1 style="font-size:3.5em">Updates</h1>
+    <hr>
+    <br>
+    <div class="version-container">
+        <h2 class="version-num">1.8.2</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>_link class</li>
+            <li>_double, _overline, _dotted, _wavy, _unerline</li>
+        </ul>
+	    <h3 class="fixed">Fixes</h3>
+	    <ul>
+	        <li>Button colors in dark mode being weird</li>
+		<li>Slightly improved auto tab</li>
+	    </ul>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>Alert element</li>
+            <li>c-textbox + shortcut</li>
+            <li>&lt;..., ...&gt;</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container">
+        <h2 class="version-num">1.8.1</h2>
+	<h3 class="removed">Removed</h3>
+	<ul>
+	    <li>Removed unecessary shortcuts</li>
+	</ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.8.0">
+        <h2 class="version-num">1.8.0</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>\load -> javascript</li>
+            <ul>
+                <li>When page is loaded it will do that</li>
+                <li>if you want there to be text use replaceThis("return value")</li>
+            </ul>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>#[id] is now #id (must take up whole line)</li>
+            <li>how undo works</li>
+            <li>Things ending with END now end with ;</li>
+        </ul>
+    </div>
+    <div class="version-container" id="1.7.0">
+        <h2 class="version-num">1.7.0</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>\function =><br>javascript<br>END</li>
+            <li>summary markers now have a space by default</li>
+            <li>_html class for styling, covers the whole body</li>
+            <li>#color->text|</li>
+            <li>ssize->text|</li>
+            <li>ffont->text|</li>
+            <li>%today%</li>
+            <li>%now%</li>
+            <li>"text" c><br>javascript<br>END</li>
+            <li>"text" r><br>javascript<br>END</li>
+            <li>||text||</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>> PRO and > CON are case insensitive</li>
+            <li>> ''text''[author] is now
+                <br>
+                > text
+                <br>
+                - author
+            </li>
+            <li>{cursor:type:text} is now cursor[type]text|</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>\count works as intended</li>
+        </ul>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>&lt;c-circled&gt;</li>
+            <li>:= as shortcut for &Assign;</li>
+            <li>old way of "text"[title]</li>
+            <li>{shadow text}</li>
+            <li>{whitespace}</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.6.2">
+        <h2 class="version-num">1.6.2</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>DataLists</li>
+            <ul>
+                <li>
+                    Usable by doing:
+                    <pre>| item1
+| item2</pre>
+                </li>
+            </ul>
+            <li>Default to indent-> text</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>{cursor:type:text} can now be {cursor:type<br>text}</li>
+            <li>Improved auto tab</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>saved isn't ontop of everything</li>
+            <li>Mathjax duplication</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.6.1">
+        <h2 class="version-num">1.6.1</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>Auto tab</li>
+            <li>Descriptions for each setting in options tab</li>
+            <li>Save at the top that says if it is saved</li>
+        </ul>
+        <h3 class="quality-of-life">Quality of life</h3>
+        <ul>
+            <li>Pressing enter for adding/removing custom regexes will perform the action</li>
+            <li>Home button in emojis page</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>List item markers on the update Table of Contents</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>Ctrl + number now goes to the right tab</li>
+            <li>Optimized emoji search</li>
+            <li>Using closing tag will not do auto-close if autocomplete html elements is on</li>
+        </ul>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>c-time</li>
+            <li>c-unicode</li>
+            <li>c-upsidedown</li>
+            <li>c-prompt</li>
+            <li>c-confirm</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.6">
+        <h2 class="version-num">1.6</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>&lt;c-cursive>cursive text&lt;c-cursive></li>
+            <ul>
+                <li><c-cursive>text</c-cursive></li>
+            </ul>
+            <li>&lt;c-midieval>midieval text&lt;c-midieval></li>
+            <ul>
+                <li>
+                    <c-midieval>text</c-midieval>
+                </li>
+            </ul>
+            <li>&lt;c-hollow>hollow text&lt;c-hollow></li>
+            <ul>
+                <li>
+                    <c-hollow>text</c-hollow>
+                </li>
+            </ul>
+            <li>...> and &lt;...</li>
+            <li>Many new emoji shortcuts</li>
+            <li>\emoji{amount}\</li>
+            <li>\emoji{amount seperator}\</li>
+            <li>Code block highlighting (must be included)</li>
+            <li>Code block line numbers (must be included)</li>
+            <li>CSS color previews (must be included)</li>
+            <li>Custom regular expression searches</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>\emoji\ is actually random</li>
+            <li>\emoji\ can also be \emoji{amount} and \emoji{amount seperator}</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>Custom emoji list loads when the page is loaded</li>
+        </ul>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>amount&lt;->letter spacing</li>
+            <li>Old style of #[color]text|, f[font]text| and s[size]text|</li>
+            <li>Meter and progress bar</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.5">
+        <h2 class="version-num">1.5</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>Feedback when adding/removing custom emotes</li>
+            <li>Transition when turning on and off the bar</li>
+            <li>Unicode flag shortcuts</li>
+            <li>\import((gf)){css}</li>
+            <ul>
+                <li>Links the css stylesheet given if (gf) is not there</li>
+                <li>If (gf) is given it links the font given from google fonts</li>
+            </ul>
+            <li>Clicking on emoji in emoji list coppies the shortcut</li>
+            <ul>
+                <li>Right clicking on emoji in emoji list coppies the emoji</li>
+            </ul>
+            <li>Search for emoji</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>Changed names of: </li>
+            <ul>
+                <li>bking -> black_king (and all other chess pieces)</li>
+                <li>+1 -> thumbs_up</li>
+                <li>-1 thumbs_down</li>
+            </ul>
+            <li>Layout of the emoji page</li>
+            <li>Renamed the skintone modifiers</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.4.6">
+        <h2 class="version-num">1.4.6</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>adding an ! after the [w:h] part of textbox makes it not resizeable whether or not a w and height are provided</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>Textbox shortcut is now [w:h]text| instead of ([w:h])[(style)]text|</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.4.5">
+        <h2 class="version-num">1.4.5</h2>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>Line height shortcut</li>
+            <ul>
+                <li>|height text|</li>
+            </ul>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.4.4">
+        <h2 class="version-num">1.4.4</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>\n is a break element</li>
+            <li>unicode escapes (\u00ff)</li>
+            <li>Loading screen</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.4.3">
+        <h2 class="version-num">1.4.3</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>\undefemoji{emoji}</li>
+            <ul>
+                <li>undefines a custom emoji</li>
+            </ul>
+            <li>It now saves the emojis you have defiened</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>\DEFEMOJI :emoji: name\ is now also \defemoji{emoji}{name}</li>
+            <li>\DEFEMOJI is also now not case sensitive</li>
+            <li>Layout of the emoji list page</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.4.2">
+        <h2 class="version-num">1.4.2</h2>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>\EMOJI\ provides a random emoji from the list of emojis</li>
+            <li>:U_number: is now not case sensitive</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.4.1">
+        <h2 class="version-num">1.4.1</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>Regional_indicators</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>:reg:letter:</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.4.0">
+        <h2 class="version-num">1.4.0</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>Debug context menu</li>
+            <ul>
+                <li>Select text and alt + right click</li>
+                <li>First regex match, loggs the first regular expression match that matches the selected text</li>
+                <li>regex match, loggs every regular expression that matches the selected text</li>
+            </ul>
+            <li>Shortcut for &asymp;: ~=</li>
+            <li>Shortcut for &divide;: ./.</li>
+            <li>Emote for &divide;: :div:</li>
+            <li>Shortcut for &ne;: /=</li>
+            <li>Shortcut for &le;: &lt;_</li>
+            <li>Shortcut for &ge;: _></li>
+            <li>Mathjax works</li>
+            <li>Setting to turn on and off Mathjax</li>
+            <li>[text]*number results in text being multiplied by number</li>
+            <li>INCLUDE:SPIN and &lt;spin>element</li>
+            <li>&lt;evaluate>javascript&lt;/evaluate></li>
+            <li>added INCLUDE:RAINBOW</li>
+            <ul>
+                <li>Not to be confused with &lt;c-rainbow></li>
+            </ul>
+            <li>Better way to do \FONT:font\ and \INCLUDE:include\</li>
+            <ul>
+                <li>\font{font}</li>
+                <li>\include{include}</li>
+                <li>\END\ and \SECTION\ also work this way</li>
+            </ul>
+            <li>Search query strings</li>
+            <ul>
+                <li>preview=color, color of the preview</li>
+                <li>previewtext=color, color of the preview text</li>
+            </ul>
+            <li>*[css]text| as alternative to {*"css" text}</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>$$2 + 2$$ is now, $$$2 + 2$$$</li>
+            <li>#[id] now returns a div element instead of a span element</li>
+            <li>The transition from light to dark mode and from dark to light mode is less jarring</li>
+            <li>Link to this and the link to the list of emojis now open in new tabs</li>
+            <li>Rounded Buttons</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>When the page is loaded the text is converted</li>
+            <li>.[class]text triggered the textbox regex, it shouldn't now</li>
+            <li>Preview was 1px larger than the page</li>
+            <li>If caps lock was on it would break key combinations that used shift</li>
+            <li>Markdown "emoji"</li>
+            <li>Border shorthand fix</li>
+        </ul>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>\THEME:theme\</li>
+            <li>\SECTION\</li>
+            <ul>
+                <li>Reduntant of #[id]</li>
+            </ul>
+            <li>\ENDSECTION\</li>
+            <li>comment</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.3.1">
+        <h2 class="version-num">1.3.1</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>if the a tag doesn't get a title it defaults to the link</li>
+            <li>autosave, refreshing should'nt erase progress</li>
+            <li>{cursor:type:text} is now {cursor:type text} or {cursor:type:text}</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.3.0">
+        <h2 class="version-num">1.3.0</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>\EMOJI :name: value\</li>
+            <ul>
+                <li>creates a custom emoji</li>
+            </ul>
+            <li>c-rotate, rotates text</li>
+            <li>[angle]*text*</li>
+            <ul>
+                <li>text will be skewed by angle</li>
+            </ul>
+            <li>indent->text the first line of text is indented by indent</li>
+            <li>&lt;c-textbox> element</li>
+            <li>[w:h][(style)]text| as shortcut for c-textbox</li>
+            <li>Now a way to name the file</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>c-upsidedown now just rotates text</li>
+            <li>font size is based on browser settings</li>
+            <li>margin-->text are now display:inline-block instead of display:block</li>
+            <li>.[class]"text" is now .[class]text|</li>
+            <li>default name for plain + converted files is name of the file</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>All custom dom elements are in the dropdown</li>
+            <li>print button</li>
+        </ul>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>Loading</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.2.0">
+        <h2 class="version-num">1.2.0</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>Table of Contents on update log</li>
+            <li>Update Log styling</li>
+            <li>Letter spacing syntax</li>
+            <ul>
+                <li>spacing&lt;->text</li>
+            </ul>
+            <li>#[color] and {#color} now support #rgb</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>color search regex is now [0-9a-fA-F] instead of [0-f]</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>readme can now be copy and pasted and it will work</li>
+            <li>This page now has a favicon</li>
+            <li>Hovering over the ribbon doesn't constantly say ctrl + shift + e</li>
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <div class="version-container" id="1.1.3">
+        <h2 class="version-num">1.1.3</h2>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>''text'' can have multiple on the same line</li>
+            <li>\SPACING:space\gives a div instead of style</li>
+        </ul>
+    </div>
+    <br>
+    <hr>
+    <div class="version-container" id="1.1.2">
+        <h2 class="version-num">1.1.2</h2>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>shortcuts for font, color, size work</li>
+        </ul>
+    </div>
+    <br><hr>
+    <div id="1.1.1" class="version-container">
+        <h2 class="version-num">1.1.1</h2>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>f[font], #[color], s[size] now don't use " instead end with |</li>
+        </ul>
+    </div>
+    <br><hr>
+    <div id="1.1.0" class="version-container">
+        <h2 class="version-num">1.1.0</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>|line-height text|</li>
+            <ul>
+                <li>makes the line height different for text in the |</li>
+            </ul>
+            <li>\LINEHEIGHT:line-height\</li>
+            <ul>
+                <li>makes the line height for the whole page that</li>
+            </ul>
+            <li>Added loading screen</li>
+        </ul>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li># is optional in heading id</li>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>Heading ids didn't close the heading tag</li>
+        </ul>
+    </div>
+    <br><hr>
+    <div id="1.0.1" class="version-container">
+        <h2 class="version-num">1.0.1</h2>
+        <h3 class="changed">Changes</h3>
+        <ul>
+            <li>|(margin> )text&lt;-|<br>Was changed to<br>|(margin>)text&lt;-|<br>same with center and right align</li>
+        </ul>
+    </div>
+    <br><hr>
+    <div id="1.0.0" class="version-container">
+        <h2 class="version-num">1.0.0</h2>
+        <h3 class="added">Additions</h3>
+        <ul>
+            <li>Added Update Log</li>
+            <li>Added .[class]"text" as alternative to {."class"text}</li>
+            <li>Indentation Left, Right, and Center align have an optional margin option now</li>
+            <ul>
+                <li>|(margin)> left&lt;-|</li>
+                <li>|->right &lt;(margin)|</li>
+                <li>|(margin)->text&lt;-(margin)|</li>
+            </ul>
+            <li>Margin left, right, and center have better versions</li>
+            <ul>
+                <li>margin-->text</li>
+                <li>text&lt;--margin</li>
+                <li>margin-->text&lt;--margin</li>
+            </ul>
+            <li>Link to README.md<li>
+        </ul>
+        <h3 class="removed">Removed</h3>
+        <ul>
+            <li>Flags</li>
+            <ul>
+                <li>|*</li>
+                <li>|></li>
+            </ul>
+            <li>Old version of Margin</li>
+            <ul>
+                <li>{->margin text}</li>
+                <li>{text &lt;-margin}</li>
+                <li>{margin->text&lt;-margin}</li>
+            </ul>
+        </ul>
+        <h3 class="fixed">Fixes</h3>
+        <ul>
+            <li>>PRO + >CON didn't close the style attribute</li>
+            <li>Unicode copy works on chrome</li>
+        </ul>
+    </div>
+    </div>  
+</body>
+<script>
+    document.getElementById("main").style.marginLeft = `${document.getElementById("toc").clientWidth}px`
+</script>
+</html>
